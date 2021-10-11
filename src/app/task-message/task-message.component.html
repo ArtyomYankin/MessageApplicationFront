@@ -1,1 +1,33 @@
-<app-task-message-form></app-task-message-form>
+
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Your Tasks</h1>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <app-task-message-form></app-task-message-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Descrption</th>
+                    <th>ApiType</th>
+                    <th>Params</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of service.list">
+                    <td (click)="populateForm(pd)" >{{pd.name}}</td>
+                    <td (click)="populateForm(pd)">{{pd.description}}</td>
+                    <td (click)="populateForm(pd)">{{pd.apiType}}</td>
+                    <td (click)="populateForm(pd)">{{pd.apiParam}}</td>
+                    <td>
+                         <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.id)"></i> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from './user.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   constructor(private fb: FormBuilder, private http: HttpClient) {}
-  readonly BaseURI = 'http://localhost:5000/api';
+  readonly BaseURI = 'http://localhost:5001/api';
+  formData: User = new User();
   formModel = this.fb.group({
     Email: ['', Validators.email],
     Passwords: this.fb.group(
