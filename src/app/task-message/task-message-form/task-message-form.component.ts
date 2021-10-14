@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -12,9 +13,10 @@ import { UserService } from 'src/app/shared/user.service';
 export class TaskMessageFormComponent implements OnInit {
   apiTypes: any[] = [
     { apiType: 'Weather', id: 1 },
-    { apiType: 'Covid', id: 2 },
-    { apiType: 'Football', id: 3 },
+    { apiType: 'TopTrack', id: 2 },
+    { apiType: 'Covid', id: 3 },
   ];
+  dateTime: Date;
   public selectedApi: string;
   userDetails: any;
   constructor(

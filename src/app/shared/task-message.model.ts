@@ -5,6 +5,7 @@ export class TaskMessage {
   apiType: string = '';
   apiParam: string = '';
   userId: number = 0;
-  // firstSend: Date;
-  // lastSent: Date;
+  pereodicity: number = 0;
+  firstSend: string = '';
+  lastSent: string = '';
 }

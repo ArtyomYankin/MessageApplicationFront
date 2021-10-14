@@ -14,6 +14,7 @@
                     <th>Descrption</th>
                     <th>ApiType</th>
                     <th>Params</th>
+                    <th>LastCompleted</th>
                     <th></th>
                 </tr>
             </thead>
@@ -23,8 +24,9 @@
                     <td (click)="populateForm(pd)">{{pd.description}}</td>
                     <td (click)="populateForm(pd)">{{pd.apiType}}</td>
                     <td (click)="populateForm(pd)">{{pd.apiParam}}</td>
+                    <td (click)="populateForm">{{pd.lastSent}}</td>
                     <td>
-                         <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.id)"></i> 
+                         <button (click)="onDelete(pd.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>

@@ -19,7 +19,14 @@ export class TaskMessageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userId = this.getUserData();
+    this.userService.getUserProfile().subscribe(
+      (res) => {
+        this.userDetails = res;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
     this.service.refreshList(this.userId);
   }
   getUserData() {
